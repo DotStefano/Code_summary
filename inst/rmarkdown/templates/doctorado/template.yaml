@@ -1,15 +1,3 @@
 name: Doctoral Data Analysis
-description: >
-  General-purpose RMarkdown template for doctoral data analysis. 
-  Includes collapsible interpretation blocks per chunk, 
-  conclusions and a progress checklist.
+description: General-purpose RMarkdown template for doctoral data analysis with collapsible interpretation blocks per chunk, conclusions and a progress checklist.
 create_dir: false
-```
-
----
-
-**3. Mover tu `.Rmd`**
-
-En GitHub, abre `Code_summary.Rmd` → edita → copia todo el contenido → cancela. Luego crea un archivo nuevo en:
-```
-inst/rmarkdown/templates/doctorado/skeleton/skeleton.Rmd
