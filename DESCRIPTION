@@ -1,10 +1,7 @@
 Package: CodeSummary
 Title: RMarkdown Template for Data Analysis
 Version: 0.1.0
-Author: Stefano Simonetti
-Maintainer: Stefano Simonetti 
-Description: General-purpose RMarkdown template for data analysis. Includes 
-    sections for data loading, cleaning, statistics, visualization and export, 
-    with collapsible interpretation blocks per chunk and a final summary.
+Authors@R: person("Stefano", "Simonetti", role = c("aut", "cre"), email = "")
+Description: General-purpose RMarkdown template for doctoral data analysis.
 License: MIT
 Encoding: UTF-8
