@@ -1,0 +1,10 @@
+Package: CodeSummary
+Title: RMarkdown Template for Doctoral Data Analysis
+Version: 0.1.0
+Author: Stefano Forgione
+Maintainer: Stefano Forgione <tu@email.com>
+Description: General-purpose RMarkdown template for data analysis. Includes 
+    sections for data loading, cleaning, statistics, visualization and export, 
+    with collapsible interpretation blocks per chunk and a final summary.
+License: MIT
+Encoding: UTF-8
