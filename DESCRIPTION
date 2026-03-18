@@ -1,7 +1,7 @@
 Package: CodeSummary
-Title: RMarkdown Template for Data Analysis
+Title: RMarkdown Template for Doctoral Data Analysis
 Version: 0.1.0
-Authors@R: person("Stefano", "Simonetti", role = c("aut", "cre"), email = "")
+Authors@R: person(given = "Stefano", family = "Simonetti", role = c("aut", "cre"), email = "s.simonettimacaya@gmail.com")
 Description: General-purpose RMarkdown template for doctoral data analysis.
 License: MIT
 Encoding: UTF-8
