@@ -1,0 +1,208 @@
+---
+title: "Título del análisis"
+subtitle: "Subtítulo o descripción breve"
+author: "Stefano Forgione"
+date: "`r format(Sys.Date(), '%d de %B de %Y')`"
+affiliation: "Doctorado en Ciencias mención Química, Universidad X"
+dataset: "nombre_del_archivo.xlsx"
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: true
+    toc_depth: 3
+    number_sections: true
+    theme: flatly
+    highlight: tango
+    df_print: paged
+    code_folding: show
+    self_contained: true
+---
+
+```{r setup, include=FALSE}
+# Opciones globales de knitr para todo el documento
+knitr::opts_chunk$set(
+  echo       = TRUE,
+  warning    = FALSE,
+  message    = FALSE,
+  eval       = FALSE,
+  fig.align  = "center",
+  fig.width  = 8,
+  fig.height = 5,
+  dpi        = 150
+)
+
+options(scipen = 999, digits = 4)
+set.seed(42)
+```
+
+```{r librerias, eval=TRUE}
+# Cargar todas las librerías necesarias para el análisis
+library(readxl)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(knitr)
+library(kableExtra)
+```
+
+---
+
+# Introducción {-}
+
+> **Objetivo:** Describir brevemente la pregunta de investigación y el propósito del análisis.
+
+**Dataset:** `nombre_del_archivo.xlsx`  
+**Fecha:** `r Sys.Date()`
+
+---
+
+# Carga de datos
+
+```{r carga-datos}
+# Importar el dataset desde Excel y hacer una inspección preliminar
+df_raw <- read_excel("data/nombre_del_archivo.xlsx", sheet = "Hoja1")
+
+glimpse(df_raw)
+```
+
+<details>
+<summary>📝 Interpretación</summary>
+<div style="margin-left: 2rem; margin-top: 0.5rem; color: #555;">
+
+Describir aquí las características generales del dataset: número de filas, columnas, tipos de variables, valores faltantes observados.
+
+</div>
+</details>
+
+---
+
+# Limpieza y preparación
+
+```{r limpieza}
+# Renombrar columnas, factorizar variables y filtrar registros inválidos
+df <- df_raw
+```
+
+<details>
+<summary>📝 Interpretación</summary>
+<div style="margin-left: 2rem; margin-top: 0.5rem; color: #555;">
+
+Indicar qué transformaciones se realizaron, cuántos registros fueron excluidos y por qué razón.
+
+</div>
+</details>
+
+---
+
+# Estadística descriptiva
+
+```{r descriptivos}
+# Calcular medidas de resumen por grupo y presentar en tabla formateada
+summary(df)
+```
+
+<details>
+<summary>📝 Interpretación</summary>
+<div style="margin-left: 2rem; margin-top: 0.5rem; color: #555;">
+
+Comentar las tendencias centrales y dispersión observadas. Señalar si algún grupo presenta valores inusualmente altos o bajos.
+
+</div>
+</details>
+
+---
+
+# Análisis estadístico
+
+```{r estadistica}
+# Aplicar los tests estadísticos apropiados y construir tabla de resultados
+```
+
+<details>
+<summary>📝 Interpretación</summary>
+<div style="margin-left: 2rem; margin-top: 0.5rem; color: #555;">
+
+Indicar qué variables resultaron estadísticamente significativas, la dirección del efecto y si los resultados se mantienen tras corrección por comparaciones múltiples.
+
+</div>
+</details>
+
+---
+
+# Visualización
+
+```{r visualizacion}
+# Generar los gráficos principales del análisis
+```
+
+<details>
+<summary>📝 Interpretación</summary>
+<div style="margin-left: 2rem; margin-top: 0.5rem; color: #555;">
+
+Describir los patrones visuales más relevantes. ¿Los gráficos son consistentes con los resultados estadísticos?
+
+</div>
+</details>
+
+---
+
+# Exportación de resultados
+
+```{r exportacion}
+# Guardar tablas de resultados y figuras en los formatos requeridos
+```
+
+<details>
+<summary>📝 Interpretación</summary>
+<div style="margin-left: 2rem; margin-top: 0.5rem; color: #555;">
+
+Listar los archivos generados y su ubicación.
+
+</div>
+</details>
+
+---
+
+# Conclusiones {-}
+
+> Síntesis de los hallazgos principales del análisis. Redactar en párrafos continuos, integrando los resultados estadísticos con su significado biológico o clínico.
+
+**Hallazgo 1:** ...
+
+**Hallazgo 2:** ...
+
+**Hallazgo 3:** ...
+
+**Limitaciones:** ...
+
+**Próximos pasos:** ...
+
+---
+
+# Resumen del análisis {-}
+
+| Paso | Descripción | Estado |
+|------|-------------|--------|
+| Carga de datos | Dataset `nombre_del_archivo.xlsx` importado | ✅ |
+| Limpieza | Renombrado, factorización y filtrado | ✅ |
+| Descriptivos | Resumen por grupo | ✅ |
+| Análisis estadístico | Tests aplicados | ✅ |
+| Visualización | Gráficos generados | ✅ |
+| Exportación | Archivos guardados | ✅ |
+
+**Notas:**  
+- Completar aquí con observaciones relevantes del análisis.
+
+---
+
+<details>
+<summary>Sesión de R</summary>
+```{r session-info, echo=FALSE, eval=TRUE}
+sessionInfo()
+```
+</details>
+
+---
+*Generado el `r format(Sys.time(), "%d/%m/%Y a las %H:%M")`*
