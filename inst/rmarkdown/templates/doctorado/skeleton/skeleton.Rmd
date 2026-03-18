@@ -1,9 +1,9 @@
 ---
 title: "Título del análisis"
 subtitle: "Subtítulo o descripción breve"
-author: "Stefano Forgione"
+author: "Stefano Simonetti"
 date: "`r format(Sys.Date(), '%d de %B de %Y')`"
-affiliation: "Doctorado en Ciencias mención Química, Universidad X"
+affiliation: "Institut für Medizinische Biometrie, Ruprecht-Karls-Universität Heidelberg"
 dataset: "nombre_del_archivo.xlsx"
 output:
   html_document:
