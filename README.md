@@ -1,3 +1,10 @@
+# 📊 CodeSummary
+
+> **A general-purpose RMarkdown template for structured, reproducible data analysis.**  
+> Load → Clean → Analyze → Visualize → Export — all in one polished document.
+
+<br>
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![Language](https://img.shields.io/badge/Language-R%20%7C%20RMarkdown-276DC3?logo=r)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
@@ -46,24 +53,26 @@ Each section includes:
 
 ## 🚀 Quick Start
 
-**1. Clone or download the template**
+**1. Install the package**
 
 ```r
-# Option A: Clone the repo
-# git clone https://github.com/DotStefano/Code_summary.git
+remotes::install_github("DotStefano/Code_summary")
+```
 
-# Option B: Download directly from R
+**2. Open the template in RStudio**
+
+File → New File → R Markdown → From Template → **Code Summary**
+
+**3. Or download directly**
+
+```r
 download.file(
-  url = "https://raw.githubusercontent.com/DotStefano/Code_summary/main/Code_summary.Rmd",
+  url = "https://raw.githubusercontent.com/DotStefano/Code_summary/main/inst/rmarkdown/templates/doctorado/skeleton/skeleton.Rmd",
   destfile = "my_analysis.Rmd"
 )
 ```
 
-**2. Open in RStudio and customize**
-
-Replace the example data loading section with your own dataset, then work through each section adapting the code to your needs.
-
-**3. Render**
+**4. Render**
 
 ```r
 rmarkdown::render("my_analysis.Rmd")
@@ -72,8 +81,6 @@ rmarkdown::render("my_analysis.Rmd")
 ---
 
 ## 📦 Dependencies
-
-The template uses common R packages. Install them with:
 
 ```r
 install.packages(c(
@@ -102,9 +109,14 @@ install.packages(c(
 
 ```
 Code_summary/
-├── Code_summary.Rmd   # The main template
-├── README.md          # This file
-└── LICENSE            # MIT License
+├── assets/
+│   └── CODE_SUMMARY.png    # Preview image
+├── inst/rmarkdown/templates/doctorado/
+│   └── skeleton/skeleton.Rmd  # The main template
+├── index.html              # Live preview (GitHub Pages)
+├── DESCRIPTION
+├── LICENSE
+└── README.md
 ```
 
 ---
