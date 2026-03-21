@@ -1,13 +1,16 @@
-# 📊 CodeSummary
-
-> **A general-purpose RMarkdown template for structured, reproducible data analysis.**  
-> Load → Clean → Analyze → Visualize → Export — all in one polished document.
-
-<br>
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![Language](https://img.shields.io/badge/Language-R%20%7C%20RMarkdown-276DC3?logo=r)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
+
+---
+
+<div align="center">
+  <a href="https://dotstefano.github.io/Code_summary/">
+    <img src="assets/CODE_SUMMARY.png" width="800" alt="CodeSummary preview"/>
+  </a>
+  <br/>
+  <sub>Click to open the live interactive document</sub>
+</div>
 
 ---
 
