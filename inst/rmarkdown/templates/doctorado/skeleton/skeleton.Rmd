@@ -18,7 +18,117 @@ output:
     df_print: paged
     code_folding: show
     self_contained: true
+    css: !expr NULL
 ---
+
+```{css custom-styles, echo=FALSE}
+/* ── Formal – Fondo Hueso ────────────────────────────────────────────────── */
+:root {
+  --bg      : #F2EFE9;
+  --bg2     : #E8E4DC;
+  --bg3     : #DEDACE;
+  --border  : #C8C4BA;
+  --texto   : #1E1E1E;
+  --texto2  : #4A4740;
+  --acento  : #2C5F8A;  /* azul institución    */
+  --kw      : #7B2D8B;  /* keywords  – ciruela */
+  --fn      : #1A6B5A;  /* funciones – verde   */
+  --str     : #8B4513;  /* strings   – siena   */
+  --num     : #B5540A;  /* números   – ocre    */
+  --type    : #2C5F8A;  /* tipos     – azul    */
+  --comment : #8A8680;  /* comentarios         */
+}
+
+/* ── Base ────────────────────────────────────────────────────────────────── */
+body, .main-container {
+  background-color: var(--bg) !important;
+  color: var(--texto);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* ── Encabezados ─────────────────────────────────────────────────────────── */
+h1, h1.title {
+  color: var(--texto);
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+h2 {
+  color: var(--texto);
+  font-weight: 600;
+  border-bottom: 1.5px solid var(--border);
+  padding-bottom: 4px;
+}
+h3 { color: var(--texto2); font-weight: 600; }
+
+/* ── TOC ─────────────────────────────────────────────────────────────────── */
+#TOC {
+  background-color: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 12px;
+}
+#TOC a       { color: var(--texto2) !important; font-weight: 400; }
+#TOC a:hover { color: var(--texto)  !important; text-decoration: none; }
+#TOC li.active > a { color: var(--texto) !important; font-weight: 600; border-left: 2px solid var(--acento); padding-left: 6px; background: transparent !important; }
+
+/* ── Código ──────────────────────────────────────────────────────────────── */
+pre {
+  background-color: #FDFAF5 !important;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--acento);
+  border-radius: 3px;
+  padding: 14px;
+  font-family: "Fira Code", "Courier New", monospace;
+  font-size: 0.88em;
+}
+pre code { background-color: transparent !important; color: var(--texto); }
+
+.kw           { color: var(--kw)      !important; font-weight: 600; }
+.fu           { color: var(--fn)      !important; }
+.st           { color: var(--str)     !important; }
+.dv, .fl      { color: var(--num)     !important; }
+.kc           { color: var(--num)     !important; }
+.dt           { color: var(--type)    !important; }
+.co           { color: var(--comment) !important; font-style: italic; }
+.op           { color: var(--texto)   !important; }
+
+code:not([class]) {
+  background-color: var(--bg2);
+  color: var(--kw);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 1px 5px;
+  font-size: 0.90em;
+  font-family: "Fira Code", "Courier New", monospace;
+}
+
+/* ── Details ─────────────────────────────────────────────────────────────── */
+details {
+  background-color: var(--bg2);
+  border-left: 3px solid var(--border);
+  padding: 8px 14px;
+  margin: 10px 0;
+}
+summary       { color: var(--texto2); font-weight: 600; cursor: pointer; user-select: none; }
+summary:hover { color: var(--acento); }
+details div   { color: var(--texto2) !important; margin-top: 6px; }
+
+/* ── Blockquote ──────────────────────────────────────────────────────────── */
+blockquote {
+  border-left: 3px solid var(--acento);
+  background-color: var(--bg2);
+  padding: 10px 16px;
+  color: var(--texto2);
+  font-style: italic;
+}
+
+/* ── Tablas ──────────────────────────────────────────────────────────────── */
+table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 0.95em; }
+thead tr                 { background-color: var(--bg3); color: var(--texto); font-weight: 600; }
+tbody tr:nth-child(even) { background-color: var(--bg2); }
+tbody tr:nth-child(odd)  { background-color: var(--bg);  }
+td, th { padding: 8px 12px; border: 1px solid var(--border); color: var(--texto); }
+```
 
 ```{r setup, include=FALSE}
 # Opciones globales de knitr para todo el documento
@@ -69,7 +179,7 @@ glimpse(df_raw)
 
 <details>
 <summary>📝 Interpretación</summary>
-<div style="margin-left: 2rem; margin-top: 0.5rem; color: #555;">
+<div style="margin-left: 2rem; margin-top: 0.5rem;">
 
 Describir aquí las características generales del dataset: número de filas, columnas, tipos de variables, valores faltantes observados.
 
@@ -87,7 +197,7 @@ df <- df_raw
 
 <details>
 <summary>📝 Interpretación</summary>
-<div style="margin-left: 2rem; margin-top: 0.5rem; color: #555;">
+<div style="margin-left: 2rem; margin-top: 0.5rem;">
 
 Indicar qué transformaciones se realizaron, cuántos registros fueron excluidos y por qué razón.
 
@@ -105,7 +215,7 @@ summary(df)
 
 <details>
 <summary>📝 Interpretación</summary>
-<div style="margin-left: 2rem; margin-top: 0.5rem; color: #555;">
+<div style="margin-left: 2rem; margin-top: 0.5rem;">
 
 Comentar las tendencias centrales y dispersión observadas. Señalar si algún grupo presenta valores inusualmente altos o bajos.
 
@@ -122,7 +232,7 @@ Comentar las tendencias centrales y dispersión observadas. Señalar si algún g
 
 <details>
 <summary>📝 Interpretación</summary>
-<div style="margin-left: 2rem; margin-top: 0.5rem; color: #555;">
+<div style="margin-left: 2rem; margin-top: 0.5rem;">
 
 Indicar qué variables resultaron estadísticamente significativas, la dirección del efecto y si los resultados se mantienen tras corrección por comparaciones múltiples.
 
@@ -139,7 +249,7 @@ Indicar qué variables resultaron estadísticamente significativas, la direcció
 
 <details>
 <summary>📝 Interpretación</summary>
-<div style="margin-left: 2rem; margin-top: 0.5rem; color: #555;">
+<div style="margin-left: 2rem; margin-top: 0.5rem;">
 
 Describir los patrones visuales más relevantes. ¿Los gráficos son consistentes con los resultados estadísticos?
 
@@ -156,7 +266,7 @@ Describir los patrones visuales más relevantes. ¿Los gráficos son consistente
 
 <details>
 <summary>📝 Interpretación</summary>
-<div style="margin-left: 2rem; margin-top: 0.5rem; color: #555;">
+<div style="margin-left: 2rem; margin-top: 0.5rem;">
 
 Listar los archivos generados y su ubicación.
 
@@ -183,14 +293,61 @@ Listar los archivos generados y su ubicación.
 
 # Resumen del análisis {-}
 
-| Paso | Descripción | Estado |
-|------|-------------|--------|
-| Carga de datos | Dataset `nombre_del_archivo.xlsx` importado | ✅ |
-| Limpieza | Renombrado, factorización y filtrado | ✅ |
-| Descriptivos | Resumen por grupo | ✅ |
-| Análisis estadístico | Tests aplicados | ✅ |
-| Visualización | Gráficos generados | ✅ |
-| Exportación | Archivos guardados | ✅ |
+<style>
+.cl-wrap{font-family:Georgia,serif;max-width:640px;border:0.5px solid #C8C4BA;border-radius:4px;overflow:hidden;background:#F2EFE9;margin:1rem 0;}
+.cl-header{padding:14px 20px 12px;border-bottom:0.5px solid #C8C4BA;}
+.cl-title-row{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px;}
+.cl-title-txt{font-size:0.88em;font-weight:700;color:#1E1E1E;letter-spacing:0.4px;text-transform:uppercase;}
+.cl-counter{font-size:0.78em;color:#8A8680;font-style:italic;}
+.cl-track{background:#DEDACE;height:3px;border-radius:2px;}
+.cl-fill{height:3px;border-radius:2px;background:#2C5F8A;transition:width 0.4s ease;}
+.cl-pct{font-size:0.72em;color:#8A8680;margin-top:5px;text-align:right;letter-spacing:0.2px;}
+.cl-row{display:flex;align-items:center;gap:14px;padding:10px 20px;cursor:pointer;border-bottom:0.5px solid #E0DCD4;transition:background 0.12s;}
+.cl-row:last-child{border-bottom:none;}
+.cl-row:hover{background:#EAE6DE;}
+.cl-check{width:15px;height:15px;border-radius:50%;border:1.5px solid #B8B4AC;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+.cl-check.done{background:#2C5F8A;border-color:#2C5F8A;}
+.cl-check.done::after{content:'✓';color:white;font-size:9px;font-weight:700;font-family:sans-serif;}
+.cl-label{font-size:0.88em;font-weight:600;color:#1E1E1E;}
+.cl-label.done{text-decoration:line-through;color:#A8A4A0;}
+.cl-sub{font-size:0.76em;color:#9A9690;margin-top:1px;}
+.cl-done-bar{display:none;padding:9px 20px;font-size:0.78em;color:#1A6B5A;font-style:italic;border-top:0.5px solid #C8C4BA;background:#EDF5F0;}
+</style>
+
+<div class="cl-wrap">
+<div class="cl-header">
+<div class="cl-title-row">
+<span class="cl-title-txt">Progreso del análisis</span>
+<span class="cl-counter" id="cl-counter">0 de 6 completados</span>
+</div>
+<div class="cl-track"><div class="cl-fill" id="cl-bar" style="width:0%"></div></div>
+<div class="cl-pct" id="cl-pct">0 %</div>
+</div>
+<div id="cl-steps">
+<div class="cl-row" onclick="clTog(0)"><div class="cl-check" id="cc0"></div><div><div class="cl-label" id="cl0">Carga de datos</div><div class="cl-sub">Dataset importado y estructura verificada</div></div></div>
+<div class="cl-row" onclick="clTog(1)"><div class="cl-check" id="cc1"></div><div><div class="cl-label" id="cl1">Limpieza y preparación</div><div class="cl-sub">Renombrado, factorización y filtrado</div></div></div>
+<div class="cl-row" onclick="clTog(2)"><div class="cl-check" id="cc2"></div><div><div class="cl-label" id="cl2">Estadística descriptiva</div><div class="cl-sub">Resumen por grupo calculado</div></div></div>
+<div class="cl-row" onclick="clTog(3)"><div class="cl-check" id="cc3"></div><div><div class="cl-label" id="cl3">Análisis estadístico</div><div class="cl-sub">Tests aplicados y corrección múltiple</div></div></div>
+<div class="cl-row" onclick="clTog(4)"><div class="cl-check" id="cc4"></div><div><div class="cl-label" id="cl4">Visualización</div><div class="cl-sub">Gráficos generados y revisados</div></div></div>
+<div class="cl-row" onclick="clTog(5)"><div class="cl-check" id="cc5"></div><div><div class="cl-label" id="cl5">Exportación de resultados</div><div class="cl-sub">Archivos guardados en formato final</div></div></div>
+</div>
+<div class="cl-done-bar" id="cl-done">&#10003; Análisis completado</div>
+</div>
+
+<script>
+var clS=[false,false,false,false,false,false];
+function clTog(i){
+  clS[i]=!clS[i];
+  document.getElementById('cc'+i).className='cl-check'+(clS[i]?' done':'');
+  document.getElementById('cl'+i).className='cl-label'+(clS[i]?' done':'');
+  var n=clS.filter(Boolean).length;
+  var p=Math.round(n/6*100);
+  document.getElementById('cl-bar').style.width=p+'%';
+  document.getElementById('cl-counter').textContent=n+' de 6 completados';
+  document.getElementById('cl-pct').textContent=p+' %';
+  document.getElementById('cl-done').style.display=n===6?'block':'none';
+}
+</script>
 
 **Notas:**  
 - Completar aquí con observaciones relevantes del análisis.
