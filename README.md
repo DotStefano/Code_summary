@@ -31,15 +31,15 @@ Midnight UI background (`#121317`) with Soft Neon Overlay palette: Blush Pink, M
 <tr>
 <td align="center">
 
-<a href="https://dotstefano.github.io/Code_summary/">
-  <img src="assets/CODE_SUMMARY.png" width="400" alt="Light theme preview"/>
+<a href="https://dotstefano.github.io/Code_summary/light.html">
+  <img src="assets/Code_summary_light.png" width="400" alt="Light theme preview"/>
 </a>
 
 </td>
 <td align="center">
 
-<a href="https://dotstefano.github.io/Code_summary/">
-  <img src="assets/CODE_SUMMARY_DARK.png" width="400" alt="Dark theme preview"/>
+<a href="https://dotstefano.github.io/Code_summary/dark.html">
+  <img src="assets/Code_summary_dark.png" width="400" alt="Dark theme preview"/>
 </a>
 
 </td>
