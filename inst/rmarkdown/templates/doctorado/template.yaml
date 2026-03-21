@@ -1,3 +1,5 @@
-name: Data Analysis template
-description: General-purpose RMarkdown template for data analysis with collapsible interpretation blocks per chunk, conclusions and a progress checklist.
+name: Doctorado – Light (Hueso)
+description: >
+  Plantilla formal con fondo hueso (#F2EFE9), tipografía Georgia,
+  syntax highlighting académico y checklist de progreso interactivo.
 create_dir: false
