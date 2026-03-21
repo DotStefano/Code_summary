@@ -1,5 +1,6 @@
-name: Doctorado – Dark (Soft Neon)
+name: Data Analysis template - Dark
 description: >
-  Plantilla con fondo azul noche (#0F1117), tipografía Georgia,
-  syntax highlighting soft neon y checklist de progreso interactivo.
+  General-purpose RMarkdown template for data analysis with collapsible
+  interpretation blocks per chunk, conclusions and a progress checklist.
+  Dark theme with soft neon syntax highlighting.
 create_dir: false
